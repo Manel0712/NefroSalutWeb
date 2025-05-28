@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Routes,
   Route,
@@ -31,6 +31,8 @@ function LiveAnnouncer() {
   const announcerRef = useRef();
 
   useEffect(() => {
+    const audioEnabled = localStorage.getItem("audioEnabled") !== "false";
+
     const path = location.pathname;
     let message = "";
 
@@ -92,7 +94,8 @@ function LiveAnnouncer() {
 
     announcerRef.current.textContent = message;
 
-    if ("speechSynthesis" in window) {
+    if (audioEnabled && "speechSynthesis" in window) {
+      window.speechSynthesis.cancel();
       const utterance = new SpeechSynthesisUtterance(message);
       window.speechSynthesis.speak(utterance);
     }
@@ -110,8 +113,23 @@ function LiveAnnouncer() {
 }
 
 function App() {
+  const [enabled, setEnabled] = useState(() => {
+    return localStorage.getItem("audioEnabled") !== "false";
+  });
+
+  const toggle = () => {
+    const newState = !enabled;
+    localStorage.setItem("audioEnabled", newState);
+    setEnabled(newState);
+  };
+
   return (
     <>
+      <button onClick={toggle} style={{ margin: "10px" }}>
+        {enabled
+          ? "🔊 Desactivar audiodescripció"
+          : "🔇 Activar audiodescripció"}
+      </button>
       <LiveAnnouncer />
       <Routes>
         <Route path="/" element={<Home />} />
