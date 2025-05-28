@@ -15,7 +15,7 @@ export const AssignPatientForm = ({ data }) => {
     patientService
       .create(newPatients.id, newPatients.idPatient)
       .then((response) => {
-        navigate("/pacients", { state: data });
+        navigate("/pacient", { state: data });
       });
   };
   useEffect(() => {
