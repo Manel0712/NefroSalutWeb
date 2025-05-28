@@ -1,5 +1,10 @@
 import { useEffect, useRef } from "react";
-import { Routes, Route, useLocation, BrowserRouter as Router } from "react-router-dom";
+import {
+  Routes,
+  Route,
+  useLocation,
+  BrowserRouter as Router,
+} from "react-router-dom";
 
 import { Home } from "./components";
 import { Loggin } from "./Loggin";
@@ -19,7 +24,7 @@ import { Quizzes } from "./Quizzes";
 import { CreateQuiz } from "./CreateQuiz";
 import { QuizUpdate } from "./QuizUpdate";
 
-import './App.css';
+import "./App.css";
 
 function LiveAnnouncer() {
   const location = useLocation();
@@ -27,67 +32,67 @@ function LiveAnnouncer() {
 
   useEffect(() => {
     const path = location.pathname;
-    let message = '';
+    let message = "";
 
     switch (path) {
-      case '/':
-        message = 'Has accedit a la pàgina d’inici.';
+      case "/":
+        message = "Has accedit a la pàgina d’inici.";
         break;
-      case '/loggin':
-        message = 'Has accedit a la pàgina d’inici de sessió.';
+      case "/loggin":
+        message = "Has accedit a la pàgina d’inici de sessió.";
         break;
-      case '/menuPrincipal':
-        message = 'Has accedit al menú principal.';
+      case "/menuPrincipal":
+        message = "Has accedit al menú principal.";
         break;
-      case '/pacients':
-        message = 'Gestió de pacients.';
+      case "/pacients":
+        message = "Gestió de pacients.";
         break;
-      case '/AssignPatient':
-        message = 'Assignació de pacients.';
+      case "/AssignPatient":
+        message = "Assignació de pacients.";
         break;
-      case '/progress':
-        message = 'Progrés del pacient.';
+      case "/progress":
+        message = "Progrés del pacient.";
         break;
-      case '/Register':
-        message = 'Registre de pacient.';
+      case "/Register":
+        message = "Registre de pacient.";
         break;
-      case '/plats':
-        message = 'Gestió de plats.';
+      case "/plats":
+        message = "Gestió de plats.";
         break;
-      case '/Detail':
-        message = 'Detall del plat.';
+      case "/Detail":
+        message = "Detall del plat.";
         break;
-      case '/CreateDishe':
-        message = 'Crear un nou plat.';
+      case "/CreateDishe":
+        message = "Crear un nou plat.";
         break;
-      case '/EditDishe':
-        message = 'Editar plat.';
+      case "/EditDishe":
+        message = "Editar plat.";
         break;
-      case '/videos':
-        message = 'Gestió de vídeos.';
+      case "/videos":
+        message = "Gestió de vídeos.";
         break;
-      case '/CreateVideo':
-        message = 'Crear vídeo.';
+      case "/CreateVideo":
+        message = "Crear vídeo.";
         break;
-      case '/EditVideo':
-        message = 'Editar vídeo.';
+      case "/EditVideo":
+        message = "Editar vídeo.";
         break;
-      case '/quizzes':
-        message = 'Gestió de trivials.';
+      case "/quizzes":
+        message = "Gestió de trivials.";
         break;
-      case '/CreateQuiz':
-        message = 'Crear trivial.';
+      case "/CreateQuiz":
+        message = "Crear trivial.";
         break;
-      case '/EditQuiz':
-        message = 'Editar trivial.';
+      case "/EditQuiz":
+        message = "Editar trivial.";
         break;
       default:
-        message = 'Pàgina carregada.';
+        message = "Pàgina carregada.";
     }
 
     announcerRef.current.textContent = message;
 
-    if ('speechSynthesis' in window) {
+    if ("speechSynthesis" in window) {
       const utterance = new SpeechSynthesisUtterance(message);
       window.speechSynthesis.speak(utterance);
     }

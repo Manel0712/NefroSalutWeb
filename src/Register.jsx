@@ -9,15 +9,19 @@ export const Register = () => {
   const navigate = useNavigate();
   const handleRegister = (values) => {
     sanitaryService.create(values).then((data) => {
-        navigate(-1);
-    })
+      navigate(-1);
+    });
   };
 
-  const { values, handleChange, handleSubmit } = useRegisterForm(handleRegister);
+  const { values, handleChange, handleSubmit } =
+    useRegisterForm(handleRegister);
 
   return (
     <>
-      <form onSubmit={handleSubmit} style={{ width: "300px", margin: "50px auto" }}>
+      <form
+        onSubmit={handleSubmit}
+        style={{ width: "300px", margin: "50px auto" }}
+      >
         <h2>Registre</h2>
         <InputField
           label="Nombre:"
@@ -68,8 +72,16 @@ export const Register = () => {
           value={values.identificador}
           onChange={handleChange}
         />
-        <button type="submit" style={{ padding: "0.5rem 1rem" }}>Registrar-se</button>
-        <button type="submit" style={{ padding: "0.5rem 1rem" }} onClick={() => navigate(-1)}>Sortir</button>
+        <button type="submit" style={{ padding: "0.5rem 1rem" }}>
+          Registrar-se
+        </button>
+        <button
+          type="submit"
+          style={{ padding: "0.5rem 1rem" }}
+          onClick={() => navigate(-1)}
+        >
+          Sortir
+        </button>
       </form>
     </>
   );

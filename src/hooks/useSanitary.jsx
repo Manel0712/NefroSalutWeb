@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import sanitaryService from "../services/users/sanitaryService.js";
 

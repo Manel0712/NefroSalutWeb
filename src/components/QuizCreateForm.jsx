@@ -1,6 +1,6 @@
 import quizService from "../services/quiz/quizService";
-import { useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { useQuizCreateForm } from "../hooks";
 import { InputField } from "./InputField";
 
@@ -13,7 +13,7 @@ export const QuizCreateForm = () => {
     });
   };
 
-  const { values, handleChange, handleSubmit } = useQuizCreateForm(newQuiz)
+  const { values, handleChange, handleSubmit } = useQuizCreateForm(newQuiz);
 
   return (
     <div className="container">

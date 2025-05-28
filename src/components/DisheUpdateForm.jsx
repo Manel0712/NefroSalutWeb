@@ -1,14 +1,14 @@
 import disheService from "../services/dishes/disheService";
-import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { useDisheEditForm } from "../hooks";
 import { InputField } from "./InputField";
 
 export const DisheUpdateForm = ({
-    id,
-    disheName,
-    disheCategory,
-    disheClassifications
+  id,
+  disheName,
+  disheCategory,
+  disheClassifications,
 }) => {
   const navigate = useNavigate();
   const newDishe = (event) => {
@@ -39,23 +39,29 @@ export const DisheUpdateForm = ({
       C22: form["C22"].value,
       C23: form["C23"].value,
       C24: form["C24"].value,
-    }
+    };
     const clasificacionesJSON = JSON.stringify(clasificacion);
     const clasificaciones = JSON.parse(clasificacionesJSON);
     const dishe = {
       ...values,
-      clasificaciones: clasificaciones
-    }
+      clasificaciones: clasificaciones,
+    };
     disheCreate(dishe);
   };
 
   const disheCreate = (dishe) => {
-    disheService.disheEdit(id, dishe.nombre, dishe.categoria, dishe.clasificaciones).then((response) => {
-      navigate(-1);
-    });
-  }
+    disheService
+      .disheEdit(id, dishe.nombre, dishe.categoria, dishe.clasificaciones)
+      .then((response) => {
+        navigate(-1);
+      });
+  };
 
-  const { values, handleChange, handleSubmit } = useDisheEditForm(disheCreate, { nombre: disheName, categoria: disheCategory, ...disheClassifications });
+  const { values, handleChange, handleSubmit } = useDisheEditForm(disheCreate, {
+    nombre: disheName,
+    categoria: disheCategory,
+    ...disheClassifications,
+  });
 
   return (
     <div className="container">

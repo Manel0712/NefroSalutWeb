@@ -1,6 +1,6 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
-import { AssignPatientForm } from './components';
+import React from "react";
+import { useLocation } from "react-router-dom";
+import { AssignPatientForm } from "./components";
 
 export const AssignForm = () => {
   const { state: data } = useLocation();

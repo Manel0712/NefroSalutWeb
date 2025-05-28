@@ -1,6 +1,6 @@
 import videosService from "../services/videos/videosService";
-import { useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { useVideoCreateForm } from "../hooks";
 import { InputField } from "./InputField";
 
@@ -11,7 +11,7 @@ export const VideoCreateForm = () => {
   useEffect(() => {
     videosService.getAllCategories().then((data) => {
       setCategories(data);
-    })
+    });
   }, []);
   const newVideo = (values) => {
     videosService.create(values).then((response) => {
@@ -19,7 +19,7 @@ export const VideoCreateForm = () => {
     });
   };
 
-  const { values, handleChange, handleSubmit } = useVideoCreateForm(newVideo)
+  const { values, handleChange, handleSubmit } = useVideoCreateForm(newVideo);
 
   return (
     <div className="container">
@@ -41,14 +41,21 @@ export const VideoCreateForm = () => {
         <div className="mb-4">
           <label className="block mb-2">
             Categoría:
-            <select name="categoria" value={values.categoria} onChange={handleChange} className="border rounded px-4 py-2 w-full" required style={{display: "block", width: "100%", padding: "0.5rem"}}>
+            <select
+              name="categoria"
+              value={values.categoria}
+              onChange={handleChange}
+              className="border rounded px-4 py-2 w-full"
+              required
+              style={{ display: "block", width: "100%", padding: "0.5rem" }}
+            >
               <option value="">-- Selecciona una categoría --</option>
               {categories.map((cat) => (
                 <option key={cat.id} value={cat.id}>
                   {cat.nombre}
                 </option>
               ))}
-          </select>
+            </select>
           </label>
         </div>
         <div>

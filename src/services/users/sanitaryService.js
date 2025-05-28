@@ -1,10 +1,10 @@
-const baseUrl = "http://localhost/apinefrosalut/public/api/personal";
+const baseUrl = "https://nefrosalutapi.onrender.com/public/api/personal";
 const token = "8OoKQ1nQSmPcnOCfh0mso8bHbjHods6grbwHW0V3c1fa4b8b";
 const getAll = () => {
   const request = fetch(baseUrl, {
     headers: {
-        'Authorization': `Bearer ${token}`,
-    }
+      Authorization: `Bearer ${token}`,
+    },
   }).then((response) => {
     return response.json();
   });
@@ -16,7 +16,7 @@ const create = (newObject) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      'Authorization': `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({
       nombre: newObject.nombre,
@@ -25,7 +25,7 @@ const create = (newObject) => {
       telefono: newObject.telefono,
       password: newObject.password,
       rol: newObject.rol,
-      identificador: newObject.identificador
+      identificador: newObject.identificador,
     }),
   }).then((response) => {
     return response.json();
@@ -38,7 +38,7 @@ const loggin = (newObject) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      'Authorization': `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({
       email: newObject.email,
@@ -67,7 +67,7 @@ const sanitaryEdit = (
   telefono,
   contraseña,
   rol,
-  identificador
+  identificador,
 ) => {
   const data = {
     nombre: nombre,
@@ -76,7 +76,7 @@ const sanitaryEdit = (
     telefono: telefono,
     password: contraseña,
     rol: rol,
-    identificador: identificador
+    identificador: identificador,
   };
   const request = fetch(`${baseUrl}/${id}`, {
     method: "PUT",
@@ -98,7 +98,9 @@ const getPacientes = (id) => {
 };
 
 const getNuevoPaciente = (idPersonal, idPaciente) => {
-  const request = fetch(`${baseUrl}/${idPersonal}/asignarpaciente/${idPaciente}`).then((response) => {
+  const request = fetch(
+    `${baseUrl}/${idPersonal}/asignarpaciente/${idPaciente}`,
+  ).then((response) => {
     return response.json();
   });
   return request;
@@ -107,8 +109,8 @@ const getNuevoPaciente = (idPersonal, idPaciente) => {
 const getProgreso = (id) => {
   const request = fetch(`${baseUrl}/${id}/progreso`, {
     headers: {
-      'Authorization': `Bearer ${token}`,
-    }
+      Authorization: `Bearer ${token}`,
+    },
   }).then((response) => {
     return response.json();
   });

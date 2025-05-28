@@ -1,5 +1,5 @@
-import React from 'react';
-import { QuizCreateForm } from './components';
+import React from "react";
+import { QuizCreateForm } from "./components";
 
 export const CreateQuiz = () => {
   return (

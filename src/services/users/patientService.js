@@ -1,11 +1,12 @@
-const baseUrl = "http://localhost/apinefrosalut/public/api/paciente";
-const baseUrlPersonal = "http://localhost/apinefrosalut/public/api/personal";
+const baseUrl = "https://nefrosalutapi.onrender.com/public/api/paciente";
+const baseUrlPersonal =
+  "https://nefrosalutapi.onrender.com/public/api/personal";
 const token = "8OoKQ1nQSmPcnOCfh0mso8bHbjHods6grbwHW0V3c1fa4b8b";
 const getAll = (id) => {
   const request = fetch(`${baseUrlPersonal}/${id}/pacientes`, {
     headers: {
-        'Authorization': `Bearer ${token}`,
-    }
+      Authorization: `Bearer ${token}`,
+    },
   }).then((response) => {
     return response.json();
   });
@@ -16,19 +17,7 @@ const getAllPatients = () => {
   const request = fetch(`${baseUrl}/pacientesSinMedico`, {
     method: "POST",
     headers: {
-        'Authorization': `Bearer ${token}`,
-    }
-  }).then((response) => {
-    return response.json();
-  });
-  return request;
-}
-
-const create = (id, idPaciente) => {
-  const request = fetch(`${baseUrlPersonal}/${id}/asignarpaciente/${idPaciente}`, {
-    headers: {
-      'Authorization': `Bearer ${token}`,
-      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
     },
   }).then((response) => {
     return response.json();
@@ -36,13 +25,31 @@ const create = (id, idPaciente) => {
   return request;
 };
 
-const patientRemove = (id, idPaciente) => {
-  const request = fetch(`${baseUrlPersonal}/${id}/quitarpaciente/${idPaciente}`, {
-    headers: {
-      'Authorization': `Bearer ${token}`,
-      "Content-Type": "application/json",
+const create = (id, idPaciente) => {
+  const request = fetch(
+    `${baseUrlPersonal}/${id}/asignarpaciente/${idPaciente}`,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
     },
-  }).then((response) => {
+  ).then((response) => {
+    return response.json();
+  });
+  return request;
+};
+
+const patientRemove = (id, idPaciente) => {
+  const request = fetch(
+    `${baseUrlPersonal}/${id}/quitarpaciente/${idPaciente}`,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    },
+  ).then((response) => {
     return response.json();
   });
   return request;
@@ -77,7 +84,7 @@ const patientEdit = (
   peso,
   altura,
   IMC,
-  clasificacion
+  clasificacion,
 ) => {
   const data = {
     nombre: nombre,
@@ -98,7 +105,7 @@ const patientEdit = (
     peso: peso,
     altura: altura,
     IMC: IMC,
-    clasificacion: clasificacion
+    clasificacion: clasificacion,
   };
   const request = fetch(`${baseUrl}/${id}`, {
     method: "PUT",
@@ -115,8 +122,8 @@ const patientEdit = (
 const getProgreso = (id) => {
   const request = fetch(`${baseUrl}/${id}/progreso`, {
     headers: {
-      'Authorization': `Bearer ${token}`,
-    }
+      Authorization: `Bearer ${token}`,
+    },
   }).then((response) => {
     return response.json();
   });
@@ -126,24 +133,24 @@ const getProgreso = (id) => {
 const getVideosProgreso = (id) => {
   const request = fetch(`${baseUrl}/progresoVideos/${id}`, {
     headers: {
-      'Authorization': `Bearer ${token}`,
-    }
+      Authorization: `Bearer ${token}`,
+    },
   }).then((response) => {
     return response.json();
   });
   return request;
-}
+};
 
 const getQuizProgreso = (id) => {
   const request = fetch(`${baseUrl}/consultarpartida/${id}`, {
     headers: {
-      'Authorization': `Bearer ${token}`,
-    }
+      Authorization: `Bearer ${token}`,
+    },
   }).then((response) => {
     return response.json();
   });
   return request;
-}
+};
 
 export default {
   getAll: getAll,

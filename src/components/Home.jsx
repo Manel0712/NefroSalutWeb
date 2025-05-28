@@ -1,5 +1,5 @@
-import React from 'react';
-import kidneyImage from '../image.png';
+import React from "react";
+import kidneyImage from "../image.png";
 import { MenuButtons } from "./MenuButtons";
 import { useNavigate } from "react-router-dom";
 
@@ -18,7 +18,7 @@ export const Home = () => {
     <div className="min-h-screen bg-[#f7f9fa] flex flex-col items-center justify-center text-center px-4">
       <h1
         className="text-[80px] mb-8"
-        style={{ fontFamily: "'Inria Serif', serif", color: 'black' }}
+        style={{ fontFamily: "'Inria Serif', serif", color: "black" }}
       >
         NefroSalut
       </h1>
@@ -40,4 +40,4 @@ export const Home = () => {
       </div>
     </div>
   );
-}
+};
