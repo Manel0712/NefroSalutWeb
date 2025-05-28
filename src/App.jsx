@@ -126,7 +126,9 @@ function App() {
   return (
     <>
       <button onClick={toggle} style={{ margin: "10px" }}>
-        {enabled ? "🔊 Desactivar audiodescripció" : "🔇 Activar audiodescripció"}
+        {enabled
+          ? "🔊 Desactivar audiodescripció"
+          : "🔇 Activar audiodescripció"}
       </button>
       <LiveAnnouncer />
       <Routes>
