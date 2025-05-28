@@ -135,18 +135,18 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/loggin" element={<Loggin />} />
         <Route path="/menuPrincipal" element={<MainMenu />} />
-        <Route path="/pacients" element={<Patients />} />
+        <Route path="/Pacients" element={<Patients />} />
         <Route path="/AssignPatient" element={<AssignForm />} />
         <Route path="/progress" element={<Progress />} />
         <Route path="/Register" element={<Register />} />
-        <Route path="/plats" element={<Dishes />} />
+        <Route path="/Plats" element={<Dishes />} />
         <Route path="/Detail" element={<DisheDetail />} />
         <Route path="/CreateDishe" element={<CreateDishe />} />
         <Route path="/EditDishe" element={<DisheUpdate />} />
-        <Route path="/videos" element={<Videos />} />
+        <Route path="/Videos" element={<Videos />} />
         <Route path="/CreateVideo" element={<CreateVideo />} />
         <Route path="/EditVideo" element={<VideoUpdate />} />
-        <Route path="/quizzes" element={<Quizzes />} />
+        <Route path="/Quizzes" element={<Quizzes />} />
         <Route path="/CreateQuiz" element={<CreateQuiz />} />
         <Route path="/EditQuiz" element={<QuizUpdate />} />
       </Routes>
