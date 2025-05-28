@@ -46,7 +46,7 @@ function LiveAnnouncer() {
       case "/menuPrincipal":
         message = "Has accedit al menú principal.";
         break;
-      case "/pacients":
+      case "/Pacients":
         message = "Gestió de pacients.";
         break;
       case "/AssignPatient":
@@ -58,7 +58,7 @@ function LiveAnnouncer() {
       case "/Register":
         message = "Registre de pacient.";
         break;
-      case "/plats":
+      case "/Plats":
         message = "Gestió de plats.";
         break;
       case "/Detail":
@@ -70,7 +70,7 @@ function LiveAnnouncer() {
       case "/EditDishe":
         message = "Editar plat.";
         break;
-      case "/videos":
+      case "/Videos":
         message = "Gestió de vídeos.";
         break;
       case "/CreateVideo":
@@ -79,7 +79,7 @@ function LiveAnnouncer() {
       case "/EditVideo":
         message = "Editar vídeo.";
         break;
-      case "/quizzes":
+      case "/Quizzes":
         message = "Gestió de trivials.";
         break;
       case "/CreateQuiz":
