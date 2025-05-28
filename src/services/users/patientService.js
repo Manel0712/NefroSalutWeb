@@ -1,5 +1,6 @@
 const baseUrl = "https://nefrosalutapi.onrender.com/public/api/paciente";
-const baseUrlPersonal = "https://nefrosalutapi.onrender.com/public/api/personal";
+const baseUrlPersonal =
+  "https://nefrosalutapi.onrender.com/public/api/personal";
 const token = "8OoKQ1nQSmPcnOCfh0mso8bHbjHods6grbwHW0V3c1fa4b8b";
 const getAll = (id) => {
   const request = fetch(`${baseUrlPersonal}/${id}/pacientes`, {

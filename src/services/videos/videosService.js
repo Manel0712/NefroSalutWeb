@@ -1,5 +1,6 @@
 const baseUrl = "https://nefrosalutapi.onrender.com/public/api/video";
-const baseUrlCategories = "https://nefrosalutapi.onrender.com/public/api/categoria";
+const baseUrlCategories =
+  "https://nefrosalutapi.onrender.com/public/api/categoria";
 const token = "8OoKQ1nQSmPcnOCfh0mso8bHbjHods6grbwHW0V3c1fa4b8b";
 const getAll = () => {
   const request = fetch(`${baseUrl}`, {
