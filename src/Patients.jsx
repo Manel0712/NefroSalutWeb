@@ -18,7 +18,7 @@ export const Patients = () => {
     });
   };
   const handlePatientProgress = (id, nombre) => {
-    navigate("/Progress", {
+    navigate("/progress", {
       state: {
         data,
         id,

@@ -1,8 +1,8 @@
 export const useOptions = () => {
   return [
-    { title: "videos", icon: "🎬" },
-    { title: "plats", icon: "🍽️" },
-    { title: "quizzes", icon: "🎲" },
-    { title: "pacients", icon: "👤" },
+    { title: "Videos", icon: "🎬" },
+    { title: "Plats", icon: "🍽️" },
+    { title: "Quizzes", icon: "🎲" },
+    { title: "Pacients", icon: "👤" },
   ];
 };
