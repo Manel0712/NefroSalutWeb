@@ -1,27 +1,27 @@
 /* Estilo para centrar los botones en pantalla */
 .button-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh; /* Centra verticalmente */
-    gap: 24px; /* Espacio entre botones */
-  }
-  
-  /* Estilo de los botones */
-  button {
-    background-color: #a3bdbc;
-    color: black;
-    font-weight: bold;
-    font-size: 1.2rem;
-    padding: 10px 30px;
-    border: 1px solid black;
-    border-radius: 10px;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    transition: transform 0.1s ease-in-out;
-  }
-  
-  button:hover {
-    transform: scale(1.02);
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Centra verticalmente */
+  gap: 24px; /* Espacio entre botones */
+}
+
+/* Estilo de los botones */
+button {
+  background-color: #a3bdbc;
+  color: black;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 10px 30px;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.02);
+}

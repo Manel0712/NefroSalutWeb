@@ -1,6 +1,6 @@
 import disheService from "../services/dishes/disheService";
-import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { useDisheCreateForm } from "../hooks";
 import { InputField } from "./InputField";
 
@@ -34,13 +34,13 @@ export const DisheCreateForm = () => {
       C22: form["c22"].value,
       C23: form["c23"].value,
       C24: form["c24"].value,
-    }
+    };
     const clasificacionesJSON = JSON.stringify(clasificacion);
     const clasificaciones = JSON.parse(clasificacionesJSON);
     const dishe = {
       ...values,
-      clasificaciones: clasificaciones
-    }
+      clasificaciones: clasificaciones,
+    };
     disheCreate(dishe);
   };
 
@@ -48,9 +48,10 @@ export const DisheCreateForm = () => {
     disheService.create(dishe).then((response) => {
       navigate(-1);
     });
-  }
+  };
 
-  const { values, handleChange, handleSubmit } = useDisheCreateForm(disheCreate)
+  const { values, handleChange, handleSubmit } =
+    useDisheCreateForm(disheCreate);
 
   return (
     <div className="container">
@@ -69,60 +70,15 @@ export const DisheCreateForm = () => {
           value={values.category}
           onChange={handleChange}
         />
-        <InputField
-          label="C1:"
-          name="c1"
-          type="text"
-          onChange={handleChange}
-        />
-        <InputField
-          label="C2:"
-          name="c2"
-          type="text"
-          onChange={handleChange}
-        />
-        <InputField
-          label="C3:"
-          name="c3"
-          type="text"
-          onChange={handleChange}
-        />
-        <InputField
-          label="C4:"
-          name="c4"
-          type="text"
-          onChange={handleChange}
-        />
-        <InputField
-          label="C5:"
-          name="c5"
-          type="text"
-          onChange={handleChange}
-        />
-        <InputField
-          label="C6:"
-          name="c6"
-          type="text"
-          onChange={handleChange}
-        />
-        <InputField
-          label="C7:"
-          name="c7"
-          type="text"
-          onChange={handleChange}
-        />
-        <InputField
-          label="C8:"
-          name="c8"
-          type="text"
-          onChange={handleChange}
-        />
-        <InputField
-          label="C9:"
-          name="c9"
-          type="text"
-          onChange={handleChange}
-        />
+        <InputField label="C1:" name="c1" type="text" onChange={handleChange} />
+        <InputField label="C2:" name="c2" type="text" onChange={handleChange} />
+        <InputField label="C3:" name="c3" type="text" onChange={handleChange} />
+        <InputField label="C4:" name="c4" type="text" onChange={handleChange} />
+        <InputField label="C5:" name="c5" type="text" onChange={handleChange} />
+        <InputField label="C6:" name="c6" type="text" onChange={handleChange} />
+        <InputField label="C7:" name="c7" type="text" onChange={handleChange} />
+        <InputField label="C8:" name="c8" type="text" onChange={handleChange} />
+        <InputField label="C9:" name="c9" type="text" onChange={handleChange} />
         <InputField
           label="C10:"
           name="c10"

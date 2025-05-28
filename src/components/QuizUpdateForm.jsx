@@ -1,27 +1,44 @@
 import quizService from "../services/quiz/quizService";
-import { useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { useQuizEditForm } from "../hooks";
 import { InputField } from "./InputField";
 
 export const QuizUpdateForm = ({
-    id,
-    quizPregunta,
-    quizOption1,
-    quizOption2,
-    quizOption3,
-    quizCorrectOption,
-    quizCategoria,
+  id,
+  quizPregunta,
+  quizOption1,
+  quizOption2,
+  quizOption3,
+  quizCorrectOption,
+  quizCategoria,
 }) => {
   const navigate = useNavigate();
 
   const quizUpdate = (values) => {
-    quizService.quizEdit(id, values.pregunta, values.option1, values.option2, values.option3, values.correctOption, values.categoria).then((response) => {
-      navigate(-1);
-    });
-  }
+    quizService
+      .quizEdit(
+        id,
+        values.pregunta,
+        values.option1,
+        values.option2,
+        values.option3,
+        values.correctOption,
+        values.categoria,
+      )
+      .then((response) => {
+        navigate(-1);
+      });
+  };
 
-  const { values, handleChange, handleSubmit } = useQuizEditForm(quizUpdate, { pregunta: quizPregunta, option1: quizOption1, option2: quizOption2, option3: quizOption3, correctOption: quizCorrectOption, categoria: quizCategoria, });
+  const { values, handleChange, handleSubmit } = useQuizEditForm(quizUpdate, {
+    pregunta: quizPregunta,
+    option1: quizOption1,
+    option2: quizOption2,
+    option3: quizOption3,
+    correctOption: quizCorrectOption,
+    categoria: quizCategoria,
+  });
 
   return (
     <div className="container">

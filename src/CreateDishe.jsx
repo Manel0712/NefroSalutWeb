@@ -1,5 +1,5 @@
-import React from 'react';
-import { DisheCreateForm } from './components';
+import React from "react";
+import { DisheCreateForm } from "./components";
 
 export const CreateDishe = () => {
   return (

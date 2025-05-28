@@ -3,8 +3,8 @@ const token = "8OoKQ1nQSmPcnOCfh0mso8bHbjHods6grbwHW0V3c1fa4b8b";
 const getAll = () => {
   const request = fetch(`${baseUrl}`, {
     headers: {
-        'Authorization': `Bearer ${token}`,
-    }
+      Authorization: `Bearer ${token}`,
+    },
   }).then((response) => {
     return response.json();
   });
@@ -12,24 +12,24 @@ const getAll = () => {
 };
 
 const create = (newObject) => {
-    const request = fetch(baseUrl, {
-        method: "POST",
-        headers: {
-        "Content-Type": "application/json",
-        'Authorization': `Bearer ${token}`,
-        },
-        body: JSON.stringify({
-          pregunta: newObject.pregunta,
-          option1: newObject.option1,
-          option2: newObject.option2,
-          option3: newObject.option3,
-          correctOption: newObject.correctOption,
-          categoria: newObject.categoria,
-        }),
-    }).then((response) => {
-        return response.json();
-    });
-    return request;
+  const request = fetch(baseUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({
+      pregunta: newObject.pregunta,
+      option1: newObject.option1,
+      option2: newObject.option2,
+      option3: newObject.option3,
+      correctOption: newObject.correctOption,
+      categoria: newObject.categoria,
+    }),
+  }).then((response) => {
+    return response.json();
+  });
+  return request;
 };
 
 const quizDelete = (id) => {
@@ -37,7 +37,7 @@ const quizDelete = (id) => {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
-      'Authorization': `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
   }).then((response) => {
     return response.json();
@@ -66,7 +66,7 @@ const quizEdit = (
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
-      'Authorization': `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(data),
   }).then((response) => {

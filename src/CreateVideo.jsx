@@ -1,5 +1,5 @@
-import React from 'react';
-import { VideoCreateForm } from './components';
+import React from "react";
+import { VideoCreateForm } from "./components";
 
 export const CreateVideo = () => {
   return (

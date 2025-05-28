@@ -1,7 +1,11 @@
 import { useState } from "react";
 
 export const useDisheCreateForm = (onSubmit) => {
-  const [values, setValues] = useState({ nombre: "", categoria: "", clasificaciones: "" });
+  const [values, setValues] = useState({
+    nombre: "",
+    categoria: "",
+    clasificaciones: "",
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
