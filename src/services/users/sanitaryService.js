@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost/apinefrosalut/public/api/personal";
+const baseUrl = "https://nefrosalutapi.onrender.com/api/personal";
 const token = "8OoKQ1nQSmPcnOCfh0mso8bHbjHods6grbwHW0V3c1fa4b8b";
 const getAll = () => {
   const request = fetch(baseUrl, {
